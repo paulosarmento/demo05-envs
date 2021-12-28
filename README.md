@@ -60,15 +60,14 @@ layers:
 After successful deployment, you can invoke the deployed function by using the following command:
 
 ```bash
-serverless invoke --function hello
+sls invoke --stage qa -f commit-message-scheduler
 ```
 
 Which should result in response similar to the following:
 
 ```json
 {
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v2.0! Your function executed successfully!\",\n  \"input\": {}\n}"
+    "statusCode": 200
 }
 ```
 
@@ -77,14 +76,16 @@ Which should result in response similar to the following:
 You can invoke your function locally by using the following command:
 
 ```bash
-serverless invoke local --function hello
+sls invoke local --stage qa -f commit-message-scheduler
 ```
 
 Which should result in response similar to the following:
 
 ```
+at 2021-12-28T14:47:27.136Z ""
+Message: It was the best of times, it was the worst of times
+Process finished at 2021-12-28T14:47:29.492Z
 {
-    "statusCode": 200,
-    "body": "{\n  \"message\": \"Go Serverless v2.0! Your function executed successfully!\",\n  \"input\": \"\"\n}"
+    "statusCode": 200
 }
 ```
